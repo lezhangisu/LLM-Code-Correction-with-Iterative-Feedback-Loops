@@ -1,4 +1,4 @@
-# Iterative Feedback Loop Benchmark for LLM Code Correction
+# LLM Code Correction with Iterative Feedback Loop
 
 This repository contains the experimental framework and analysis tools for the paper "Unlocking LLM Code Correction with Iterative Feedback Loops". The benchmark evaluates how large language models can iteratively improve their code solutions using feedback from an online judge (LeetCode).
 
@@ -327,15 +327,35 @@ If you use this benchmark in your research, please cite:
 ```bibtex
 @article{unlocking_llm_code_correction,
   title={Unlocking LLM Code Correction with Iterative Feedback Loops},
-  author={[Authors]},
-  year={2024},
-  journal={[Journal/Conference]}
+  author={Zhang, Le and Kothari, Suresh},
+  year={2026},
+  journal={14th Computing Conference 2026}
 }
 ```
 
 ## License
 
-[Add your license information here]
+MIT License
+
+Copyright (c) 2025
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## Contributing
 
