@@ -1,0 +1,18 @@
+# API Keys Configuration
+# Copy this file to api_keys.yaml and fill in your credentials
+# DO NOT commit this file to version control with real keys
+
+# DeepInfra API (DeepSeek-R1-0528, DeepSeek-V3-0324)
+deepinfra:
+  api_key: "YOUR_DEEPINFRA_API_KEY"
+  base_url: "https://api.deepinfra.com/v1/openai"
+
+# OpenAI API (GPT-o4-mini, GPT-4.1-mini)
+openai:
+  api_key: "YOUR_OPENAI_API_KEY"
+  base_url: "https://api.openai.com/v1"
+
+# LeetCode credentials
+leetcode:
+  csrftoken: "your_csrftoken_value"
+  leetcode_session: "your_leetcode_session_value"

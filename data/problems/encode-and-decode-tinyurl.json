@@ -1,0 +1,432 @@
+{
+    "languageList": [
+        {
+            "id": 0,
+            "name": "cpp"
+        },
+        {
+            "id": 1,
+            "name": "java"
+        },
+        {
+            "id": 2,
+            "name": "python"
+        },
+        {
+            "id": 11,
+            "name": "python3"
+        },
+        {
+            "id": 3,
+            "name": "mysql"
+        },
+        {
+            "id": 14,
+            "name": "mssql"
+        },
+        {
+            "id": 15,
+            "name": "oraclesql"
+        },
+        {
+            "id": 4,
+            "name": "c"
+        },
+        {
+            "id": 5,
+            "name": "csharp"
+        },
+        {
+            "id": 6,
+            "name": "javascript"
+        },
+        {
+            "id": 20,
+            "name": "typescript"
+        },
+        {
+            "id": 8,
+            "name": "bash"
+        },
+        {
+            "id": 19,
+            "name": "php"
+        },
+        {
+            "id": 9,
+            "name": "swift"
+        },
+        {
+            "id": 13,
+            "name": "kotlin"
+        },
+        {
+            "id": 24,
+            "name": "dart"
+        },
+        {
+            "id": 10,
+            "name": "golang"
+        },
+        {
+            "id": 7,
+            "name": "ruby"
+        },
+        {
+            "id": 12,
+            "name": "scala"
+        },
+        {
+            "id": 18,
+            "name": "rust"
+        },
+        {
+            "id": 21,
+            "name": "racket"
+        },
+        {
+            "id": 22,
+            "name": "erlang"
+        },
+        {
+            "id": 23,
+            "name": "elixir"
+        },
+        {
+            "id": 25,
+            "name": "pythondata"
+        },
+        {
+            "id": 28,
+            "name": "postgresql"
+        }
+    ],
+    "submittableLanguageList": [
+        {
+            "id": 0,
+            "name": "cpp",
+            "verboseName": "C++"
+        },
+        {
+            "id": 1,
+            "name": "java",
+            "verboseName": "Java"
+        },
+        {
+            "id": 2,
+            "name": "python",
+            "verboseName": "Python"
+        },
+        {
+            "id": 11,
+            "name": "python3",
+            "verboseName": "Python3"
+        },
+        {
+            "id": 3,
+            "name": "mysql",
+            "verboseName": "MySQL"
+        },
+        {
+            "id": 14,
+            "name": "mssql",
+            "verboseName": "MS SQL Server"
+        },
+        {
+            "id": 15,
+            "name": "oraclesql",
+            "verboseName": "Oracle"
+        },
+        {
+            "id": 4,
+            "name": "c",
+            "verboseName": "C"
+        },
+        {
+            "id": 5,
+            "name": "csharp",
+            "verboseName": "C#"
+        },
+        {
+            "id": 6,
+            "name": "javascript",
+            "verboseName": "JavaScript"
+        },
+        {
+            "id": 20,
+            "name": "typescript",
+            "verboseName": "TypeScript"
+        },
+        {
+            "id": 8,
+            "name": "bash",
+            "verboseName": "Bash"
+        },
+        {
+            "id": 19,
+            "name": "php",
+            "verboseName": "PHP"
+        },
+        {
+            "id": 9,
+            "name": "swift",
+            "verboseName": "Swift"
+        },
+        {
+            "id": 13,
+            "name": "kotlin",
+            "verboseName": "Kotlin"
+        },
+        {
+            "id": 24,
+            "name": "dart",
+            "verboseName": "Dart"
+        },
+        {
+            "id": 10,
+            "name": "golang",
+            "verboseName": "Go"
+        },
+        {
+            "id": 7,
+            "name": "ruby",
+            "verboseName": "Ruby"
+        },
+        {
+            "id": 12,
+            "name": "scala",
+            "verboseName": "Scala"
+        },
+        {
+            "id": 18,
+            "name": "rust",
+            "verboseName": "Rust"
+        },
+        {
+            "id": 21,
+            "name": "racket",
+            "verboseName": "Racket"
+        },
+        {
+            "id": 22,
+            "name": "erlang",
+            "verboseName": "Erlang"
+        },
+        {
+            "id": 23,
+            "name": "elixir",
+            "verboseName": "Elixir"
+        },
+        {
+            "id": 25,
+            "name": "pythondata",
+            "verboseName": "Pandas"
+        },
+        {
+            "id": 26,
+            "name": "react",
+            "verboseName": "React"
+        },
+        {
+            "id": 27,
+            "name": "vanillajs",
+            "verboseName": "Vanilla JS"
+        },
+        {
+            "id": 28,
+            "name": "postgresql",
+            "verboseName": "PostgreSQL"
+        },
+        {
+            "id": 29,
+            "name": "cangjie",
+            "verboseName": "Cangjie"
+        }
+    ],
+    "statusList": [
+        {
+            "id": 10,
+            "name": "Accepted"
+        },
+        {
+            "id": 11,
+            "name": "Wrong Answer"
+        },
+        {
+            "id": 12,
+            "name": "Memory Limit Exceeded"
+        },
+        {
+            "id": 13,
+            "name": "Output Limit Exceeded"
+        },
+        {
+            "id": 14,
+            "name": "Time Limit Exceeded"
+        },
+        {
+            "id": 15,
+            "name": "Runtime Error"
+        },
+        {
+            "id": 16,
+            "name": "Internal Error"
+        },
+        {
+            "id": 20,
+            "name": "Compile Error"
+        },
+        {
+            "id": 30,
+            "name": "Timeout"
+        }
+    ],
+    "questionDiscussionTopic": {
+        "id": 2486264,
+        "commentCount": 60,
+        "topLevelCommentCount": 44
+    },
+    "ugcArticleOfficialSolutionArticle": {
+        "uuid": "PkLJ6vrh",
+        "chargeType": "PREMIUM",
+        "canSee": false,
+        "hasVideoArticle": false
+    },
+    "question": {
+        "title": "Encode and Decode TinyURL",
+        "titleSlug": "encode-and-decode-tinyurl",
+        "questionId": "535",
+        "questionFrontendId": "535",
+        "questionTitle": "Encode and Decode TinyURL",
+        "translatedTitle": null,
+        "content": "<blockquote>Note: This is a companion problem to the <a href=\"https://leetcode.com/discuss/interview-question/system-design/\" target=\"_blank\">System Design</a> problem: <a href=\"https://leetcode.com/discuss/interview-question/124658/Design-a-URL-Shortener-(-TinyURL-)-System/\" target=\"_blank\">Design TinyURL</a>.</blockquote>\n\n<p>TinyURL is a URL shortening service where you enter a URL such as <code>https://leetcode.com/problems/design-tinyurl</code> and it returns a short URL such as <code>http://tinyurl.com/4e9iAk</code>. Design a class to encode a URL and decode a tiny URL.</p>\n\n<p>There is no restriction on how your encode/decode algorithm should work. You just need to ensure that a URL can be encoded to a tiny URL and the tiny URL can be decoded to the original URL.</p>\n\n<p>Implement the <code>Solution</code> class:</p>\n\n<ul>\n\t<li><code>Solution()</code> Initializes the object of the system.</li>\n\t<li><code>String encode(String longUrl)</code> Returns a tiny URL for the given <code>longUrl</code>.</li>\n\t<li><code>String decode(String shortUrl)</code> Returns the original long URL for the given <code>shortUrl</code>. It is guaranteed that the given <code>shortUrl</code> was encoded by the same object.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> url = &quot;https://leetcode.com/problems/design-tinyurl&quot;\n<strong>Output:</strong> &quot;https://leetcode.com/problems/design-tinyurl&quot;\n\n<strong>Explanation:</strong>\nSolution obj = new Solution();\nstring tiny = obj.encode(url); // returns the encoded tiny url.\nstring ans = obj.decode(tiny); // returns the original url after decoding it.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= url.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>url</code> is guranteed to be a valid URL.</li>\n</ul>\n",
+        "translatedContent": null,
+        "categoryTitle": "Algorithms",
+        "difficulty": "Medium",
+        "stats": "{\"totalAccepted\": \"280.2K\", \"totalSubmission\": \"323.4K\", \"totalAcceptedRaw\": 280156, \"totalSubmissionRaw\": 323369, \"acRate\": \"86.6%\"}",
+        "companyTagStatsV2": null,
+        "topicTags": [
+            {
+                "name": "Hash Table",
+                "slug": "hash-table",
+                "translatedName": null
+            },
+            {
+                "name": "String",
+                "slug": "string",
+                "translatedName": null
+            },
+            {
+                "name": "Design",
+                "slug": "design",
+                "translatedName": null
+            },
+            {
+                "name": "Hash Function",
+                "slug": "hash-function",
+                "translatedName": null
+            }
+        ],
+        "similarQuestionList": [],
+        "mysqlSchemas": [],
+        "dataSchemas": [],
+        "frontendPreviews": "{}",
+        "likes": 2065,
+        "dislikes": 3799,
+        "isPaidOnly": false,
+        "status": null,
+        "canSeeQuestion": true,
+        "enableTestMode": false,
+        "metaData": "{\n  \"name\": \"CodecDriver\",\n  \"params\": [\n    {\n      \"name\": \"url\",\n      \"type\": \"string\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"string\"\n  },\n  \"manual\": true\n}",
+        "enableRunCode": true,
+        "enableSubmit": true,
+        "enableDebugger": true,
+        "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 19 </code> using the latest C++ 23 standard, and <code>libstdc++</code> provided by GCC 14.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>OpenJDK 21</code>. Using compile arguments: <code>--enable-preview --release 21</code></p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.18</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">is not maintained anymore</a>. For the latest Python, please choose Python3 instead.</p>\"], \"c\": [\"C\", \"<p>Compiled with <code>gcc 14</code> using the gnu11 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level one optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n\\r\\n<p>For hash table operations, you may use <a href=\\\"https://troydhanson.github.io/uthash/\\\" target=\\\"_blank\\\">uthash</a>. \\\"uthash.h\\\" is included by default. Below are some examples:</p>\\r\\n\\r\\n<p><b>1. Adding an item to a hash.</b>\\r\\n<pre>\\r\\nstruct hash_entry {\\r\\n    int id;            /* we'll use this field as the key */\\r\\n    char name[10];\\r\\n    UT_hash_handle hh; /* makes this structure hashable */\\r\\n};\\r\\n\\r\\nstruct hash_entry *users = NULL;\\r\\n\\r\\nvoid add_user(struct hash_entry *s) {\\r\\n    HASH_ADD_INT(users, id, s);\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>2. Looking up an item in a hash:</b>\\r\\n<pre>\\r\\nstruct hash_entry *find_user(int user_id) {\\r\\n    struct hash_entry *s;\\r\\n    HASH_FIND_INT(users, &user_id, s);\\r\\n    return s;\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>3. Deleting an item in a hash:</b>\\r\\n<pre>\\r\\nvoid delete_user(struct hash_entry *user) {\\r\\n    HASH_DEL(users, user);  \\r\\n}\\r\\n</pre>\\r\\n</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13\\\" target=\\\"_blank\\\">C# 13</a> with .NET 9 runtime</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 22.14.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use 6.3.2 version of <a href=\\\"https://github.com/datastructures-js/priority-queue/tree/v6.3.2\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and 4.2.3 version of <a href=\\\"https://github.com/datastructures-js/queue/tree/v4.2.3\\\" target=\\\"_blank\\\">datastructures-js/queue</a> and 1.0.4 version of <a href=\\\"https://github.com/datastructures-js/deque/tree/v1.0.4\\\" target=\\\"_blank\\\">datastructures-js/deque</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 3.2</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 6.0</code>.</p>\\r\\n\\r\\n<p>You may use the following packages:<br/>\\r\\n<a href=\\\"https://github.com/apple/swift-algorithms/tree/1.2.0\\\" target=\\\"_blank\\\">swift-algorithms 1.2.0</a><br/>\\r\\n<a href=\\\"https://github.com/apple/swift-collections/tree/1.1.4\\\" target=\\\"_blank\\\">swift-collections 1.1.4</a><br/>\\r\\n<a href=\\\"https://github.com/apple/swift-numerics/tree/1.0.2\\\" target=\\\"_blank\\\">swift-numerics 1.0.2</a></p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.23</code></p>\\r\\n<p>Support <a href=\\\"https://pkg.go.dev/github.com/emirpasic/gods@v1.18.1\\\" target=\\\"_blank\\\">https://pkg.go.dev/github.com/emirpasic/gods@v1.18.1</a> and <a href=\\\"https://pkg.go.dev/github.com/emirpasic/gods/v2@v2.0.0-alpha\\\" target=\\\"_blank\\\">https://pkg.go.dev/github.com/emirpasic/gods/v2@v2.0.0-alpha</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.11</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 3.3.1</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 2.1.10</code>.</p>\"], \"rust\": [\"Rust\", \"<p><code>Rust 1.85.0</code>. Your code will be compiled with <code>opt-level</code> 2.</p>\\r\\n\\r\\n<p>Supports <a href=\\\"https://crates.io/crates/rand\\\" target=\\\"_blank\\\">rand v0.8</a> and <a href=\\\"https://crates.io/crates/regex\\\" target=\\\"_blank\\\">regex\\u00a0v1</a> and <a href=\\\"https://crates.io/crates/itertools\\\" target=\\\"_blank\\\">itertools\\u00a0v0.14</a> from crates.io</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 8.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>TypeScript 5.7.3, Node.js 22.14.0</code>.</p>\\r\\n\\r\\n<p>Compile Options: <code>--alwaysStrict --strictBindCallApply --strictFunctionTypes --target ES2024</code></p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use 6.3.2 version of <a href=\\\"https://github.com/datastructures-js/priority-queue/tree/v6.3.2\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and 4.2.3 version of <a href=\\\"https://github.com/datastructures-js/queue/tree/v4.2.3\\\" target=\\\"_blank\\\">datastructures-js/queue</a> and 1.0.4 version of <a href=\\\"https://github.com/datastructures-js/deque/tree/v1.0.4\\\" target=\\\"_blank\\\">datastructures-js/deque</a>.</p>\"]}",
+        "isLiked": null,
+        "nextChallenges": [],
+        "libraryUrl": null,
+        "adminUrl": null,
+        "hints": [],
+        "codeSnippets": [
+            {
+                "code": "class Solution {\npublic:\n\n    // Encodes a URL to a shortened URL.\n    string encode(string longUrl) {\n        \n    }\n\n    // Decodes a shortened URL to its original URL.\n    string decode(string shortUrl) {\n        \n    }\n};\n\n// Your Solution object will be instantiated and called as such:\n// Solution solution;\n// solution.decode(solution.encode(url));",
+                "lang": "C++",
+                "langSlug": "cpp"
+            },
+            {
+                "code": "public class Codec {\n\n    // Encodes a URL to a shortened URL.\n    public String encode(String longUrl) {\n        \n    }\n\n    // Decodes a shortened URL to its original URL.\n    public String decode(String shortUrl) {\n        \n    }\n}\n\n// Your Codec object will be instantiated and called as such:\n// Codec codec = new Codec();\n// codec.decode(codec.encode(url));",
+                "lang": "Java",
+                "langSlug": "java"
+            },
+            {
+                "code": "class Codec:\n\n    def encode(self, longUrl):\n        \"\"\"Encodes a URL to a shortened URL.\n        \n        :type longUrl: str\n        :rtype: str\n        \"\"\"\n        \n\n    def decode(self, shortUrl):\n        \"\"\"Decodes a shortened URL to its original URL.\n        \n        :type shortUrl: str\n        :rtype: str\n        \"\"\"\n        \n\n# Your Codec object will be instantiated and called as such:\n# codec = Codec()\n# codec.decode(codec.encode(url))",
+                "lang": "Python",
+                "langSlug": "python"
+            },
+            {
+                "code": "class Codec:\n\n    def encode(self, longUrl: str) -> str:\n        \"\"\"Encodes a URL to a shortened URL.\n        \"\"\"\n        \n\n    def decode(self, shortUrl: str) -> str:\n        \"\"\"Decodes a shortened URL to its original URL.\n        \"\"\"\n        \n\n# Your Codec object will be instantiated and called as such:\n# codec = Codec()\n# codec.decode(codec.encode(url))",
+                "lang": "Python3",
+                "langSlug": "python3"
+            },
+            {
+                "code": "/** Encodes a URL to a shortened URL. */\nchar* encode(char* longUrl) {\n    \n}\n\n/** Decodes a shortened URL to its original URL. */\nchar* decode(char* shortUrl) {\n    \n}\n\n// Your functions will be called as such:\n// char* s = encode(s);\n// decode(s);",
+                "lang": "C",
+                "langSlug": "c"
+            },
+            {
+                "code": "public class Codec {\n\n    // Encodes a URL to a shortened URL\n    public string encode(string longUrl) {\n        \n    }\n\n    // Decodes a shortened URL to its original URL.\n    public string decode(string shortUrl) {\n        \n    }\n}\n\n// Your Codec object will be instantiated and called as such:\n// Codec codec = new Codec();\n// codec.decode(codec.encode(url));",
+                "lang": "C#",
+                "langSlug": "csharp"
+            },
+            {
+                "code": "/**\n * Encodes a URL to a shortened URL.\n *\n * @param {string} longUrl\n * @return {string}\n */\nvar encode = function(longUrl) {\n    \n};\n\n/**\n * Decodes a shortened URL to its original URL.\n *\n * @param {string} shortUrl\n * @return {string}\n */\nvar decode = function(shortUrl) {\n    \n};\n\n/**\n * Your functions will be called as such:\n * decode(encode(url));\n */",
+                "lang": "JavaScript",
+                "langSlug": "javascript"
+            },
+            {
+                "code": "/**\n * Encodes a URL to a shortened URL.\n */\nfunction encode(longUrl: string): string {\n\t\n};\n\n/**\n * Decodes a shortened URL to its original URL.\n */\nfunction decode(shortUrl: string): string {\n\t\n};\n\n/**\n * Your functions will be called as such:\n * decode(encode(strs));\n */",
+                "lang": "TypeScript",
+                "langSlug": "typescript"
+            },
+            {
+                "code": "class Codec {\n    /**\n     * Encodes a URL to a shortened URL.\n     * @param String $longUrl\n     * @return String\n     */\n    function encode($longUrl) {\n        \n    }\n    \n    /**\n     * Decodes a shortened URL to its original URL.\n     * @param String $shortUrl\n     * @return String\n     */\n    function decode($shortUrl) {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * $obj = Codec();\n * $s = $obj->encode($longUrl);\n * $ans = $obj->decode($s);\n */",
+                "lang": "PHP",
+                "langSlug": "php"
+            },
+            {
+                "code": "class Codec {\n    // Encodes a URL to a shortened URL.\n    func encode(_ longUrl: String) -> String {\n        \n    }\n    \n    // Decodes a shortened URL to its original URL.\n    func decode(_ shortUrl: String) -> String {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * let obj = Codec()\n * val s = obj.encode(longUrl)\n * let ans = obj.decode(s)\n*/",
+                "lang": "Swift",
+                "langSlug": "swift"
+            },
+            {
+                "code": "class Codec() {\n    // Encodes a URL to a shortened URL.\n    fun encode(longUrl: String): String {\n        \n    }\n\n    // Decodes a shortened URL to its original URL.\n    fun decode(shortUrl: String): String {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * var obj = Codec()\n * var url = obj.encode(longUrl)\n * var ans = obj.decode(url)\n */",
+                "lang": "Kotlin",
+                "langSlug": "kotlin"
+            },
+            {
+                "code": "type Codec struct {\n    \n}\n\n\nfunc Constructor() Codec {\n    \n}\n\n// Encodes a URL to a shortened URL.\nfunc (this *Codec) encode(longUrl string) string {\n\t\n}\n\n// Decodes a shortened URL to its original URL.\nfunc (this *Codec) decode(shortUrl string) string {\n    \n}\n\n\n/**\n * Your Codec object will be instantiated and called as such:\n * obj := Constructor();\n * url := obj.encode(longUrl);\n * ans := obj.decode(url);\n */\n",
+                "lang": "Go",
+                "langSlug": "golang"
+            },
+            {
+                "code": "# Encodes a URL to a shortened URL.\n#\n# @param {string} longUrl\n# @return {string}\ndef encode(longUrl)\n    \nend\n\n# Decodes a shortened URL to its original URL.\n#\n# @param {string} shortUrl\n# @return {string}\ndef decode(shortUrl)\n    \nend\n\n\n# Your functions will be called as such:\n# decode(encode(url))",
+                "lang": "Ruby",
+                "langSlug": "ruby"
+            },
+            {
+                "code": "class Codec {\n    // Encodes a URL to a shortened URL.\n    def encode(longURL: String): String = {\n        \n    }\n    \n    // Decodes a shortened URL to its original URL.\n    def decode(shortURL: String): String = {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * var obj = new Codec()\n * val s = obj.encode(longURL)\n * val ans = obj.decode(s)\n */",
+                "lang": "Scala",
+                "langSlug": "scala"
+            },
+            {
+                "code": "struct Codec {\n\t\n}\n\n/** \n * `&self` means the method takes an immutable reference.\n * If you need a mutable reference, change it to `&mut self` instead.\n */\nimpl Codec {\n    fn new() -> Self {\n        \n    }\n\t\n    // Encodes a URL to a shortened URL.\n    fn encode(&self, longURL: String) -> String {\n        \n    }\n\t\n    // Decodes a shortened URL to its original URL.\n    fn decode(&self, shortURL: String) -> String {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * let obj = Codec::new();\n * let s: String = obj.encode(strs);\n * let ans: VecVec<String> = obj.decode(s);\n */",
+                "lang": "Rust",
+                "langSlug": "rust"
+            }
+        ],
+        "exampleTestcaseList": [
+            "\"https://leetcode.com/problems/design-tinyurl\""
+        ],
+        "hasFrontendPreview": false
+    }
+}

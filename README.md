@@ -1,0 +1,345 @@
+# Iterative Feedback Loop Benchmark for LLM Code Correction
+
+This repository contains the experimental framework and analysis tools for the paper "Unlocking LLM Code Correction with Iterative Feedback Loops". The benchmark evaluates how large language models can iteratively improve their code solutions using feedback from an online judge (LeetCode).
+
+## Overview
+
+The framework implements a feedback loop where:
+1. An LLM generates an initial solution to a coding problem
+2. The solution is submitted to LeetCode for evaluation
+3. If the solution fails, error feedback (wrong answer, runtime error, etc.) is provided back to the LLM
+4. The LLM refines its solution based on the feedback
+5. This process repeats up to a maximum number of iterations (10 by default)
+
+## Setup
+
+### Prerequisites
+
+- Python 3.8 or higher
+
+### 1. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Configure API Keys
+
+Create a `config/api_keys.yaml` file with your API credentials:
+
+```bash
+cp config/api_keys.yaml.example config/api_keys.yaml
+```
+
+Edit the file to add your API keys:
+
+```yaml
+# DeepInfra API (DeepSeek-R1-0528, DeepSeek-V3-0324)
+deepinfra:
+  api_key: "your-deepinfra-api-key"
+  base_url: "https://api.deepinfra.com/v1/openai"
+
+# OpenAI API (GPT-o4-mini, GPT-4.1-mini)
+openai:
+  api_key: "sk-your-key-here"
+  base_url: "https://api.openai.com/v1"
+```
+
+**Security Note:** Never commit `config/api_keys.yaml` to version control. It's already in `.gitignore`.
+
+### 3. Configure LeetCode Credentials
+
+Add your LeetCode credentials to the same `config/api_keys.yaml` file:
+
+```yaml
+leetcode:
+  csrftoken: "your_csrf_token"
+  leetcode_session: "your_session_id"
+```
+
+**How to obtain LeetCode credentials:**
+
+1. **Log in to LeetCode** in your browser (Chrome, Safari, Firefox, etc.)
+
+2. **Open Developer Tools:**
+   - **Chrome/Edge:** Press `F12` or right-click anywhere on the page and select "Inspect"
+   - **Safari:** Press `Option + Command + I` or right-click and select "Inspect Element" (you may need to enable Developer Tools in Safari Preferences > Advanced first)
+   - **Firefox:** Press `F12` or right-click and select "Inspect Element"
+
+3. **Navigate to the Network tab** in the Developer Tools panel
+
+4. **Refresh the page** (F5 or Command+R) to capture network requests
+
+5. **Click on any request** in the Network tab (for example, a request to `leetcode.com`)
+
+6. **Find the Cookies section:**
+   - In Chrome/Edge: Look for the "Cookies" tab in the right panel
+   - In Safari: Look for "Request Headers" and find the "Cookie" field
+   - In Firefox: Look for the "Cookies" tab in the request details
+
+7. **Copy these two values:**
+   - `csrftoken`: A long alphanumeric string
+   - `LEETCODE_SESSION`: Another long alphanumeric string (this is your session ID)
+
+8. **Add them to your config:**
+   ```yaml
+   leetcode:
+     csrftoken: "paste_the_csrftoken_value_here"
+     leetcode_session: "paste_the_LEETCODE_SESSION_value_here"
+   ```
+
+**Note:** These credentials expire periodically. If you get authentication errors during experiments, repeat the steps above to get fresh credentials.
+
+## Directory Structure
+
+```
+.
+├── config/
+│   ├── api_keys.yaml          # Your API keys (not in git)
+│   └── api_keys.yaml.example  # Template file
+├── data/
+│   ├── problems/              # Problem metadata JSON files
+│   ├── problem_lists/         # Problem lists and sampling data
+│   ├── iter_exp/              # Experiment results (conversation logs + submission results)
+│   └── analysis/              # Generated CSV analysis files
+├── leetcode_api/
+│   ├── __init__.py
+│   ├── config_loader.py       # API key configuration loader
+│   ├── leetcode.py            # LeetCode API client
+│   ├── models.py              # LLM API wrappers
+│   ├── utils.py               # Helper functions
+│   └── analyzer.py            # Results analyzer
+├── iter_exp.py                # Main experiment runner
+├── iter_analyze.py            # Analysis script
+├── prob_list_gen.py           # Problem list generator
+└── requirements.txt
+```
+
+## Experimental Results
+
+The complete experimental results used in the paper are provided in [`data/exp_results.zip`](data/exp_results.zip). Extracting the archive produces an `exp_results/` directory containing three subfolders, each corresponding to a distinct group of experiments:
+
+- **`baseline_data/`** — Single-shot (no feedback) results for all four models.
+- **`prompt_sensitivity_data/`** — Single-shot results obtained with an augmented ("hint") prompt, used to measure how sensitive each model is to prompt variation.
+- **`feedback_loop_data/`** — Full iterative feedback loop results (up to 10 iterations) for all four models across both languages.
+
+### Baseline and Prompt Sensitivity Data
+
+Both `baseline_data/` and `prompt_sensitivity_data/` share the same internal layout with two subfolders:
+
+- **`llm_answers/`** — Code solutions generated by each LLM, stored as plain-text `.txt` files. Each file contains the raw code output from the model for a given problem.
+- **`eval_results/`** — Evaluation results returned by LeetCode after submitting the corresponding solution, stored as `.json` files. These contain submission status, test-case pass counts, and other metadata from the online judge.
+
+Subfolders within each directory are organized by model identifier (e.g., `deepseek_r1/`, `gpt_o4_mini/`). For the prompt sensitivity data, model folders carry a `_hint` suffix (e.g., `deepseek_r1_hint/`).
+
+### Feedback Loop Data
+
+The `feedback_loop_data/` folder has a different structure that reflects the multi-turn nature of the experiments. Results are organized hierarchically as `<model>/<language>/`, and each problem produces a pair of JSON files:
+
+- **`<problem_name>_prompts.json`** — The complete iterative conversation between the user and the LLM, including the initial prompt, all feedback prompts, and the model's responses across every iteration.
+- **`<problem_name>_results.json`** — The evaluation results from LeetCode for each iteration, recording submission status codes, test-case counts, and other judge feedback at every step of the loop.
+
+These two files form a matched pair: the prompts file captures what the model saw and produced, while the results file captures how the online judge responded. Together, they provide a full trace of each feedback loop experiment.
+
+All tables and figures presented in the paper are derived from the data described above.
+
+## Usage
+
+### Step 1: Generate a Problem List
+
+Create a stratified random sample of problems from specific topics:
+
+```bash
+python prob_list_gen.py \
+  --topics "greedy,binary-search,sorting,tree" \
+  --count 32 \
+  --output "data/problem_lists/sample_32.txt"
+```
+
+This generates a problem list with balanced difficulty distribution.
+
+Dataset used in the paper are already in the problem list directory.
+
+### Step 2: Run Iterative Experiments
+
+Execute the feedback loop experiments:
+
+```bash
+python iter_exp.py \
+  --prob_list "data/problem_lists/sample_32.txt" \
+  --models "deepseek_r1 deepseek_v3 o4_mini gpt_41_mini" \
+  --languages "python3 java" \
+  --max_iterations 10 \
+  --temperature 0.1 \
+  --top_p 0.95
+```
+
+**Parameters:**
+- `--prob_list`: Path to the problem list file
+- `--models`: Space-separated list of model identifiers (deepseek_r1, deepseek_v3, o4_mini, gpt_41_mini)
+- `--languages`: Space-separated list of programming languages (python3, java, cpp, golang, javascript)
+- `--max_iterations`: Maximum feedback loop iterations (default: 10)
+- `--temperature`: LLM sampling temperature (default: 0.1)
+- `--top_p`: LLM top-p sampling parameter (default: 0.95)
+- `--output_dir`: Base directory for results (default: data/iter_exp/)
+
+The script automatically resumes interrupted experiments, so you can safely stop and restart.
+
+### Step 3: Analyze Results
+
+Generate a CSV summary of all experiments:
+
+```bash
+python iter_analyze.py \
+  --prob_list "data/problem_lists/sample_32.txt" \
+  --models "deepseek_r1 deepseek_v3 o4_mini gpt_41_mini" \
+  --languages "python3 java" \
+  --output "data/analysis/results_summary.csv"
+```
+
+The CSV contains columns for each iteration's status code and test case counts.
+
+## Supported Models
+
+The paper evaluates four LLMs across different providers:
+
+**DeepSeek Models (via DeepInfra):**
+- `deepseek_r1` - DeepSeek-R1-0528 (reasoning model with chain-of-thought)
+- `deepseek_v3` - DeepSeek-V3-0324 (general-purpose model)
+
+**OpenAI Models:**
+- `o4_mini` - GPT-o4-mini (note: temperature/top_p not configurable)
+- `gpt_41_mini` - GPT-4.1-mini
+
+## Prompt Design
+
+The prompts are designed to match the experimental setup in the paper:
+
+**Initial Prompt:**
+```
+You are an experienced software developer. Implement a program in {language}
+with the following information:
+
+## Task Descriptions: {problem_description}
+
+## Code format:
+{code_template}
+
+## Testcases:
+{example_testcases}
+
+## Instructions: Ensure the code is well-formatted and adheres to best
+practices. Optimize your code with best time and space complexity, make sure
+the output is correct. Output the executable code only. Avoid unnecessary
+explanations or comment lines in your code.
+```
+
+**Feedback Prompts:**
+Different feedback templates are used based on the error type:
+- Wrong Answer: Includes the failing test case, expected output, and actual output
+- Runtime Error: Includes the error message
+- Compile Error: Includes the compilation error
+- Memory Limit Exceeded: Requests space complexity optimization
+- Time Limit Exceeded: Requests time complexity optimization
+
+All feedback prompts instruct the model to output only executable code without explanations.
+
+## Experiment Workflow
+
+1. **Problem Loading**: The system loads problem metadata (description, code template, test cases) from JSON files in `data/problems/`
+
+2. **Initial Generation**: The LLM generates an initial solution based on the problem description and code template
+
+3. **Code Extraction**: The system extracts the code block from the LLM's response, handling different language-specific patterns
+
+4. **Submission & Evaluation**: The code is submitted to LeetCode, and the system waits for the evaluation result (typically 45-60 seconds)
+
+5. **Feedback Loop**: If the solution fails, the error information is formatted into a feedback prompt and sent back to the LLM with the conversation history
+
+6. **Iteration**: Steps 3-5 repeat until either:
+   - The solution is accepted (status code 10)
+   - Maximum iterations are reached
+
+7. **Result Storage**: For each problem, two files are created:
+   - `{problem}_prompts.json`: Complete conversation history
+   - `{problem}_results.json`: Submission results for each iteration
+
+## Data Analysis
+
+The `analyzer.py` module provides tools for loading and analyzing experimental results:
+
+```python
+from leetcode_api.analyzer import ResultAnalyzer
+
+analyzer = ResultAnalyzer(
+    prob_list=problem_names,
+    lang_list=["python3", "java"],
+    model_list=["deepseek_r1", "deepseek_v3", "o4_mini", "gpt_41_mini"]
+)
+
+# Get merged results with problem info, submission status, and token usage
+results_df = analyzer.get_merged_df()
+
+# Save to CSV
+analyzer.merged_df_to_csv("data/analysis/detailed_results.csv")
+```
+
+The merged DataFrame includes:
+- Problem metadata (difficulty, category)
+- Submission results (status code, test case counts, runtime/memory percentiles)
+- Token usage (prompt tokens, completion tokens)
+
+## LeetCode Rate Limiting
+
+LeetCode has rate limits on submissions. The system includes built-in delays:
+- 45-60 seconds between submission and result checking
+- Retry logic for failed API calls
+- Automatic resume for interrupted experiments
+
+For large-scale experiments, consider:
+- Running experiments in parallel across multiple LeetCode accounts
+- Staggering experiment start times
+- Monitoring for rate limit errors
+
+## Troubleshooting
+
+**API Key Errors:**
+- Verify your `config/api_keys.yaml` file exists and contains valid keys
+- Check that you're using the correct provider name in `--models`
+
+**LeetCode Authentication Errors:**
+- Update your LeetCode credentials in `config/api_keys.yaml` (they expire periodically)
+- Verify you're logged into LeetCode in your browser
+
+**Submission Failures:**
+- Check your internet connection
+- Verify the LeetCode problem exists and is accessible
+- Look for rate limiting errors in the console output
+
+**Import Errors:**
+- Ensure you've installed all dependencies: `pip install -r requirements.txt`
+- Check that you're running Python 3.8 or higher
+
+## Citation
+
+If you use this benchmark in your research, please cite:
+
+```bibtex
+@article{unlocking_llm_code_correction,
+  title={Unlocking LLM Code Correction with Iterative Feedback Loops},
+  author={[Authors]},
+  year={2024},
+  journal={[Journal/Conference]}
+}
+```
+
+## License
+
+[Add your license information here]
+
+## Contributing
+
+Contributions are welcome! Please open an issue or pull request for:
+- Bug fixes
+- Documentation improvements
+- Additional analysis tools

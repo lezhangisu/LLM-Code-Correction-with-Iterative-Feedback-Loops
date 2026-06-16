@@ -1,0 +1,14 @@
+# macOS hidden system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon files
+Icon\r
+
+# Thumbnails and folder metadata
+._*
+
+# Files that may be created by the finder
+.Spotlight-V100
+.Trashes
